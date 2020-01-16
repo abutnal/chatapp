@@ -1,6 +1,7 @@
 $(function(){
 	const socket = io();
 	messageContainer = document.getElementById('message_container');
+    $("#send_msg").attr("disabled", true);
 	socket.on('chat-message', data=>{
 		// console.log(data);
 		// appendMessage(`${data.name}: ${data.message}`);
@@ -23,6 +24,9 @@ $(function(){
     	var name = $('#name').val();
     	var email = $('#email').val();
     	// console.log(email);
+        if(email != '' && name!= '' ){
+            $('#send_msg').attr("disabled", false);
+        }
     	appendMessage(`You joined`);
     	socket.emit('new-user', name);
     	socket.emit('user-email', email, name);
@@ -43,8 +47,13 @@ $(function(){
 
     appendMessage = (message) =>{
     	if(message.status!='sender' && message.status!='reciever'){
+            $('#user_join').html('');
     		$('#user_join').append('<p>'+message+'</p>');
+            $('#user_join').show();
     	}
+
+        $('#user_join').delay(8000).fadeOut('slow');
+
 
     	if(message.status=='sender'){
     		$("#message_container").append('<div class="rightText"><span class="badge badge-light text-right text-wrap p-2">'  + message.data + '</span></div>');
