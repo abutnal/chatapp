@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%=pageTitle%></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="	style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script defer src="socket.io/socket.io.js"></script>
+	<script defer src="client.js"></script>
+</head>
+<style>
+</style>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<a class="navbar-brand" href="#">AB UTNAL</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Features</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Pricing</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Services
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row mt-5 bg-white p-0">
+			<div class="col-md-4 p-3">
+				<img src="images/abutnal.jpg"  class="img-fluid img-thumbnail ab-img rounded float-right" alt="">
+			</div>
+		
+			<div class="col-md-6 float-left p-3">
+				<h2 class="profile-text">AB UTNAL</h2>
+				<h3 class="profile-text">Full Stack Software Developer</h3>
+				<h4 class="profile-text">Phone: 8722222996</h4>
+				<h4 class="profile-text">Email: utnal.ab@gmail.com</h4>
+		
+				<h5 class="mt-3 profile-text"><b>Skills</b></h5>
+				<h5 class="profile-text">NodeJs, ReactJs, Redux, Php, CodeIgniter</h5>
+				<h5 class="profile-text">Bootstrap4, html5, css3, JavaScript, Jquery, Ajax</h5>
+				<h5 class="profile-text">Mysql, MongoDB</h5>
+				<div class="mt-3 social">
+		
+					<a href="https://in.linkedin.com/in/abutnal"  target="_blank"  class="social-icons"><img src="https://img.icons8.com/clouds/64/000000/linkedin.png"></a>
+					<a href="https://www.facebook.com/utnal.ab" target="_blank" class="social-icons"><img src="https://img.icons8.com/clouds/64/000000/facebook-new.png"></a>
+					<a href="https://twitter.com/AbUtnal" target="_blank" class="social-icons"><img src="https://img.icons8.com/clouds/64/000000/twitter.png"></a>
+					<a href="https://www.instagram.com/abutnal/" target="_blank" class="social-icons"><img src="https://img.icons8.com/clouds/64/000000/instagram.png"></a>
+				</div>
+				<div> <a href="profile.pdf" class="text-sucess mt-4"> Click here for more details...</a>	</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="fixed-bottom">
+		<img src="https://img.icons8.com/cute-clipart/64/000000/speech-bubble-with-dots.png" class="float-right p-4 chat-icon" data-toggle="modal" data-target="#myModal">
+	</div>
+
+
+
+	<!-- The Modal -->
+	<div class="modal" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+
+					<div class="modal-title  bg-light p-2">
+						<div>
+							<img src="images/chat.jpg"  class="chat-img float-left" alt="">
+						</div>
+						<div class="ml-4 mt-2 mr-3">AB UTNAL</div>
+						<div class="ml-4" style="width: 200px; font-size: 12px;">How may I help you ?</div>
+					</div>
+
+					<button type="button" class="close" style="font-size: 28px;" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="card chat_body">
+						<div class="card-body">
+							<form action="" id="saveName">
+								<div class="row">
+									<div class="col-md-12">
+										<input type="text" id="name" required="" placeholder="Enter your name" autocomplete="off" class="form-control mb-1 md">
+										<input type="email" id="email" required="" placeholder="Enter your email" autocomplete="off" class="form-control md mb-1">
+										<button class="btn btn-success  float-right" type="submit">Submit</button>
+									</div>
+								</div>
+							</form>
+
+							<div class="row">
+								<div class="col-md-12">
+									<div id="user_join"></div> 
+									<div id="message_container"></div>
+								</div>
+							</div>
+							
+						</div>
+
+
+					</div>
+					<form id="chatForm">
+						<div class="row p-0">
+						
+							<div class="col-md-12 p-0 mt-2">	
+										<div class="input-group mb-3 input-group-lg p-0 mt-1">
+  <input type="text" class="form-control"  required="" autocomplete="off" id="message"  aria-label="" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-success" type="submit">Send</button>
+  </div>
+</div>
+							</div>
+						</div>
+					</form>
+
+				</div>
+				<!-- /Modal body -->
+
+
+
+			</div>
+		</div>
+	</div>
+
+
+	</body>
+	</html>
