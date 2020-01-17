@@ -1,5 +1,5 @@
 .chat_body{
-	height: 410px;
+	height: 400px;
     overflow-y: hidden;
      overflow-y: auto;
 
@@ -136,7 +136,8 @@ form div:first-child {
 
 }
 .modal-content {
-    margin-bottom: -7px;
+    margin-bottom: 1px;
+    margin-right: 5px;
 }
 }
 

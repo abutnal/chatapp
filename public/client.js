@@ -38,8 +38,6 @@ $(function(){
     	appendMessage({status:'sender', data:msg});
     	socket.emit('send-chat-message', msg);
     	$('#message').val('');
-        $('#myModal').modal('show');       
-        $('#chat_body').animate({scrollTop:$("div#endpoint").offset().top},500);
         return false;
     });
 
@@ -59,11 +57,13 @@ $(function(){
 
         if(message.status=='sender'){
           $("#message_container").append('<div class="rightText"><span class="badge badge-light text-right text-wrap p-2">'  + message.data + '</span></div>');
+          scrollDown();
       }
 
       if(message.status=='reciever')
       {
           $("#message_container").append('<div class="leftText"><span class="badge badge-secondary text-left text-wrap p-2">'  + message.data + '</span></div>');
+          scrollDown();
       }
   }
 
@@ -72,6 +72,10 @@ $(function(){
    console.log('go top');
    $('#myModal').modal('show');            
    $('#chat_body').animate({ scrollTop: 0 }, 500);
-})
+  })
 
+  scrollDown = () =>{
+    $('#myModal').modal('show');       
+        $('#chat_body').animate({scrollTop:$("div#endpoint").offset().top},500);
+  }
 })
