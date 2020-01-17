@@ -34,19 +34,19 @@ var transporter = nodemailer.createTransport({
 
 
 io.on('connection', (socket)=>{
-    const users = {}
-	socket.on('new-user', name=>{
-             users[socket.id] = name;
-             socket.broadcast.emit('user-connected', name);
-	})
+  const users = {}
+  socket.on('new-user', name=>{
+   users[socket.id] = name;
+   socket.broadcast.emit('user-connected', name);
+ })
 
-	socket.on('user-email', (email, name)=>{
+  socket.on('user-email', (email, name)=>{
             // console.log(email);
             // console.log(name);
 
-           
-var mailOptions = {
-  from: 'AB UTNAL',
+            
+            var mailOptions = {
+              from: 'AB UTNAL',
   // sender: 'AB UTNAL', 
   to: 'utnal.ab@gmail.com',
   subject: `Support: user requisted for chat`,
@@ -62,13 +62,13 @@ transporter.sendMail(mailOptions, function(error, info){
 });
 
 
-	});
-	socket.on('send-chat-message', message=>{
-		socket.broadcast.emit('chat-message', {message: message, name: users[socket.id]})
-	})
-	
-	socket.on('disconnect', ()=>{
-		socket.broadcast.emit('user-disconnected', users[socket.id])
-		delete users[socket.id]
-	})
+});
+  socket.on('send-chat-message', message=>{
+    socket.broadcast.emit('chat-message', {message: message, name: users[socket.id]})
+  })
+  
+  socket.on('disconnect', ()=>{
+    socket.broadcast.emit('user-disconnected', users[socket.id])
+    delete users[socket.id]
+  })
 })

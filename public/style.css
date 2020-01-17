@@ -4,6 +4,13 @@
      overflow-y: auto;
 
 }
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+body.modal {
+    overflow: visible;
+}
 	
 .rightText{
 	text-align: right !important;
@@ -91,6 +98,7 @@ form div:first-child {
   font-size: 14px;
 }
 
+.modal { overflow: auto !important; }
 
 
 @media only screen and (min-width: 200px) and (max-width: 600px) {
@@ -122,7 +130,7 @@ form div:first-child {
 }
 
 .chat_body{
-	height: 290px;
+	height: 295px;
     overflow-y: hidden;
      overflow-y: auto;
 
@@ -131,3 +139,4 @@ form div:first-child {
     margin-bottom: -7px;
 }
 }
+

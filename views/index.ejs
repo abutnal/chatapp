@@ -53,20 +53,20 @@
 			<div class="col-md-4 p-3">
 				<img src="images/abutnal.jpg"  class="img-fluid img-thumbnail ab-img rounded float-right" alt="">
 			</div>
-		
+			
 			<div class="col-md-6 float-left p-3">
 				<h2 class="profile-text"><b>AB UTNAL</b></h2>
 				<h3 class="profile-text">Full Stack Software Developer</h3>
 				<h4 class="profile-text">Phone: 8722222996</h4>
 				<h4 class="profile-text">Email: utnal.ab@gmail.com</h4>
-		
+				
 				<h5 class="mt-3 profile-text"><b>Skills</b></h5>
 				<h5 class="profile-text">NodeJs, ReactJs, Redux, Php, CodeIgniter</h5>
 				<h5 class="profile-text">Bootstrap4, html5, css3, JavaScript, Jquery, Ajax</h5>
 				<h5 class="profile-text">Mysql, MongoDB</h5>
 				<h5> <a href="profile.pdf" class="text-sucess"> Click here for more details...</a>	</h5>
 				<div class="mt-3 social">
-		
+					
 					<a href="https://in.linkedin.com/in/abutnal"  target="_blank"  class="social-icons"><img src="https://img.icons8.com/clouds/64/000000/linkedin.png"></a>
 					<a href="https://www.facebook.com/utnal.ab" target="_blank" class="social-icons"><img src="https://img.icons8.com/clouds/64/000000/facebook-new.png"></a>
 					<a href="https://twitter.com/AbUtnal" target="_blank" class="social-icons"><img src="https://img.icons8.com/clouds/64/000000/twitter.png"></a>
@@ -76,7 +76,6 @@
 			</div>
 		</div>
 	</div>
-
 
 
 	<div class="fixed-bottom">
@@ -105,14 +104,14 @@
 				</div>
 
 				<!-- Modal body -->
-				<div class="modal-body">
-					<div class="card chat_body">
+				<div class="modal-body" id="modal_body">
+					<div class="card chat_body" id="chat_body">
 						<div class="card-body">
 							<form action="" id="saveName">
 								<div class="row">
 									<div class="col-md-12">
-										<input type="text" id="name" required="" placeholder="Enter your name" autocomplete="off" class="form-control mb-1 md">
-										<input type="email" id="email" required="" placeholder="Enter your email" autocomplete="off" class="form-control md mb-1">
+										<input type="text" id="name" required="" value="Arjun" placeholder="Enter your name" autocomplete="off" class="form-control mb-1 md">
+										<input type="email" id="email" required="" value="utnal@gmail.com" placeholder="Enter your email" autocomplete="off" class="form-control md mb-1">
 										<button class="btn btn-success  float-right" type="submit">Submit</button>
 									</div>
 								</div>
@@ -120,25 +119,33 @@
 
 							<div class="row">
 								<div class="col-md-12">
+									<div class="topp"></div>
 									<div id="user_join"></div> 
 									<div id="message_container"></div>
+									<div id="endpoint"></div>
 								</div>
 							</div>
 							
+							
 						</div>
-
-
 					</div>
+					<div class="row container">
+						<div class="col-md-12 p-0" style="margin-top:-30px; margin-left: 10px;">
+							<a href="" id="go_to_top" class="btn btn-sm float-right p-0">
+								<img src="https://img.icons8.com/clouds/24/000000/up.png">
+							</a>
+						</div>
+					</div>
+
 					<form id="chatForm">
 						<div class="row p-0">
-						
 							<div class="col-md-12 p-0 mt-2">	
-										<div class="input-group mb-3 input-group-lg p-0 mt-1">
-  <input type="text" class="form-control"  required="" autocomplete="off" id="message"  aria-label="" aria-describedby="basic-addon2">
-  <div class="input-group-append">
-    <button class="btn btn-success" id="send_msg" type="submit">Send</button>
-  </div>
-</div>
+								<div class="input-group mb-3 input-group-lg p-0 mt-1">
+									<input type="text" class="form-control"  required="" autocomplete="off" id="message"  aria-label="" aria-describedby="basic-addon2">
+									<div class="input-group-append">
+										<button class="btn btn-success" id="send_msg" type="submit">Send</button>
+									</div>
+								</div>
 							</div>
 						</div>
 					</form>
@@ -153,5 +160,5 @@
 	</div>
 
 
-	</body>
-	</html>
+</body>
+</html>
