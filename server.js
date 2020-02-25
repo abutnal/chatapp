@@ -25,8 +25,8 @@ server.listen(PORT, ()=>{
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'arjun.provabmail@gmail.com',
-    pass: 'Iforgotten'
+    user: 'MAIL@gmail.com',
+    pass: 'PASS'
   }
 });
 
